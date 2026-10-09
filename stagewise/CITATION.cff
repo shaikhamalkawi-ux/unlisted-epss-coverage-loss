@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Before Ranking Begins: A Multi-Year Study of Coverage Loss in EPSS-Based Vulnerability Triage"
+message: "Cite this reproducibility release and the accompanying manuscript when using these materials."
+type: software
+version: "1.2.0"
+date-released: "2026-09-22"
+authors:
+  - family-names: "Malkawi"
+    given-names: "Ghassan"
+    affiliation: "Higher Colleges of Technology, United Arab Emirates"
+    email: "gmalkawi@hct.ac.ae"
+repository-code: "https://github.com/shaikhamalkawi-ux/unlisted-stagewise-coverage-reproducibility"
+url: "https://github.com/shaikhamalkawi-ux/unlisted-stagewise-coverage-reproducibility"
+license: MIT
+keywords:
+  - "vulnerability triage"
+  - "EPSS"
+  - "CISA KEV"
+  - "coverage"
+  - "CVE publication state"

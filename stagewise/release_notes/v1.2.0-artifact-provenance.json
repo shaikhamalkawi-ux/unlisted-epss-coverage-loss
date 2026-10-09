@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "original_zip": "UNLISTED40_Supplementary_Material_3_PRODUCTION_CORRECTED_20260922.zip",
+  "original_zip_sha256": "c11606ce985364b091ec327e22b499f382eea7f3bfe237ae26c9689f15cff7dc",
+  "release_zip": "UNLISTED40_Supplementary_Material_3_CVE_PUBLISHED_State_Reconstruction_v1.2.0.zip",
+  "release_zip_bytes": 465202,
+  "release_zip_sha256": "a321400b6100b698ecb0fbeda394fdc22d99422fa7691f3dd157b9a4516fbe78",
+  "scientific_payload_files": 35,
+  "scientific_payload_byte_identical": true,
+  "existing_clean_root_rerun_applies_to_identical_scientific_payload": true,
+  "changed_files": [
+    {
+      "file": "PRODUCTION_PACKAGING_CORRECTION.md",
+      "original_sha256": "8e10e6db33cfced59c62312cd1ea126e729490930c20ff1bb68e6c8a193ac723",
+      "release_sha256": "9938c5eeb6202337f1e2aaeefab31a6b455c68c68354b8bf19f86aa0d3aaaf0d"
+    },
+    {
+      "file": "README.md",
+      "original_sha256": "4269189a4448ae34efdeea45422d809e1b323ee8aa7e92007df07601b4ecc618",
+      "release_sha256": "043db05f78975568b068c44c92c25bfc3440315ff17c0c9989101a5bf0fe60dc"
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "original_sha256": "82f8183e8a66571ceb56ea529e8d69a6f51b08119e899db4b747ff5ca5d33cea",
+      "release_sha256": "4c85a6a38af19bd3c53c5f109e83f4a26d4a647f653167ab03a698bc3eac77a0"
+    }
+  ],
+  "added_files": [
+    {
+      "file": "LICENSE.txt",
+      "release_sha256": "5f5ad6978759af958c5f068c38efbc6f770e71fbabe175e3ff651d5910239d9f"
+    },
+    {
+      "file": "THIRD_PARTY_CVE_LICENSE.txt",
+      "release_sha256": "e58546a13627ca2440acec760d3b557f06164d5b115f0c7649fa5ee989a20bf3"
+    },
+    {
+      "file": "THIRD_PARTY_DATA_NOTICE.md",
+      "release_sha256": "30c9488696bdd019569afee1d490ebea754e76f76a4fd203fa5b163e25f742de"
+    }
+  ],
+  "removed_files": [],
+  "zip_entry_timestamp": "2026-09-22T00:00:00",
+  "zip_compression": "DEFLATE level 9",
+  "file_count": 42
+}

@@ -1,0 +1,25 @@
+name: Stagewise reproducibility tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stagewise-reproducibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Reproduce stagewise output and fail-closed checks
+        run: |
+          cd stagewise
+          python test_reported_results.py
+          python test_release_package.py

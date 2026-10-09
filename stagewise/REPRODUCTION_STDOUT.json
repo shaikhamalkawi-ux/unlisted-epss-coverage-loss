@@ -1,0 +1,49 @@
+{
+  "cohort_size": 749,
+  "source_observable": 475,
+  "source_unobservable": 274,
+  "source_observability": 0.6341789052069426,
+  "policies": [
+    {
+      "policy": "Top-100",
+      "K": 100,
+      "captured": 14,
+      "total_misses": 735,
+      "source_unobservable_misses": 274,
+      "observable_not_captured": 461,
+      "conditional_capture": 0.029473684210526315,
+      "full_denominator_coverage": 0.018691588785046728,
+      "source_stage_share_of_misses": 0.3727891156462585,
+      "post_source_share_of_misses": 0.6272108843537415
+    },
+    {
+      "policy": "Top-500",
+      "K": 500,
+      "captured": 29,
+      "total_misses": 720,
+      "source_unobservable_misses": 274,
+      "observable_not_captured": 446,
+      "conditional_capture": 0.061052631578947365,
+      "full_denominator_coverage": 0.03871829105473965,
+      "source_stage_share_of_misses": 0.38055555555555554,
+      "post_source_share_of_misses": 0.6194444444444445
+    },
+    {
+      "policy": "Top-1000",
+      "K": 1000,
+      "captured": 41,
+      "total_misses": 708,
+      "source_unobservable_misses": 274,
+      "observable_not_captured": 434,
+      "conditional_capture": 0.0863157894736842,
+      "full_denominator_coverage": 0.05473965287049399,
+      "source_stage_share_of_misses": 0.3870056497175141,
+      "post_source_share_of_misses": 0.6129943502824858
+    }
+  ],
+  "top1pct": {
+    "captured": 69,
+    "conditional_capture": 0.14526315789473684,
+    "full_denominator_coverage": 0.09212283044058744
+  }
+}

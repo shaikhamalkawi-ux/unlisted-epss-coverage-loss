@@ -1,0 +1,12 @@
+field,type,required,description
+outcome_id,string,yes,Unique outcome identifier; CVE ID in the public example.
+future_outcome_type,string,yes,Declared observable endpoint.
+future_outcome_date,date,yes,Date of observed future outcome.
+source_provider,string,yes,Candidate/score provider.
+decision_schedule,string,yes,Prespecified review cadence.
+outcome_horizon_days,integer,yes,Complete horizon used for selection accounting.
+source_observable,boolean,yes,Whether the outcome entered any eligible pre-outcome source state.
+best_conservative_rank_within_horizon,number or blank,yes when observable,Best worst-tie rank inside the horizon; blank if no eligible rank.
+best_score_within_horizon,number or blank,no,Score associated with best conservative rank.
+best_decision_date_within_horizon,date or blank,no,Decision date associated with best conservative rank.
+top1pct_captured,boolean,no,Separately calculated proportional-capacity capture flag.

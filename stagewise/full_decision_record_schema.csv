@@ -1,0 +1,27 @@
+field,type,status,description
+decision_date,date,required,Actual decision date.
+source_snapshot_date,date,required,Source state used for decision.
+source_provider,string,required,Candidate/score provider.
+source_model_version,string,required,Provider version or vintage.
+candidate_universe_definition,string,required,Eligibility and exclusion rule.
+candidate_universe_size,integer,required,Number of rankable candidates.
+outcome_id,string,required,CVE or other outcome identifier.
+source_present_at_decision,boolean,required,Candidate present at decision.
+score,number,conditional,Decision-time score.
+rank_conservative,number,conditional,Worst occupied rank under exact ties.
+selected,boolean,required,Selection under declared capacity rule.
+capacity_policy,string,required,Fixed K or proportional rule.
+capacity_value,number,required,K or proportional share.
+outcome_horizon_days,integer,required,Complete outcome window.
+future_outcome_type,string,required,Declared observable endpoint.
+future_outcome_date,date,required for positives,Observed outcome date.
+downstream_model_version,string,conditional,Local ranking layer version.
+transport_validation_status,string,conditional,"Established, not established, or not tested."
+hashed_asset_id,string,enterprise extension,Pseudonymous asset linkage.
+first_seen,datetime,enterprise extension,First scan detection.
+last_seen,datetime,enterprise extension,Last scan detection.
+last_fixed,datetime,enterprise extension,Latest fixed state.
+resurfaced_date,datetime,enterprise extension,Reappearance after fixed state.
+remediation_verified,boolean,enterprise extension,Separate verification of closure.
+business_criticality,string/number,enterprise extension,Declared organisational context.
+exception_status,string,enterprise extension,"Accepted risk, control, or exception."

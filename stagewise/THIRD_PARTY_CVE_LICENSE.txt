@@ -1,0 +1,26 @@
+CVE copyright and terms-of-use notice
+
+Copyright © 1999-2026, The MITRE Corporation.
+CVE is a trademark and the CVE logo is a registered trademark of The MITRE Corporation.
+
+The copyright designation above is the CVE website's 2026 footer notice.
+The license and disclaimer below are reproduced from the official CVE Terms of Use.
+
+License
+
+Submissions: For all materials you submit to the Common Vulnerabilities and Exposures (CVE™), you hereby grant to The MITRE Corporation (MITRE) and all CVE Numbering Authorities (CNAs) a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute such materials and derivative works. Unless required by applicable law or agreed to in writing, you provide such materials on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE.
+
+CVE Usage: MITRE hereby grants you a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute Common Vulnerabilities and Exposures (CVE™). Any copy you make for such purposes is authorized provided that you reproduce MITRE's copyright designation and this license in any such copy.
+
+Disclaimers
+
+ALL DOCUMENTS AND THE INFORMATION CONTAINED THEREIN PROVIDED BY MITRE ARE PROVIDED ON AN "AS IS" BASIS AND THE CONTRIBUTOR, THE ORGANIZATION HE/SHE REPRESENTS OR IS SPONSORED BY (IF ANY), THE MITRE CORPORATION, ITS BOARD OF TRUSTEES, OFFICERS, AGENTS, AND EMPLOYEES, DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION THEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Authoritative sources, verified 2026-09-22:
+https://www.cve.org/Legal/TermsOfUse
+https://github.com/CVEProject/cve-website/blob/3a07b8de5d1ff8c024a7926ccd42100a88fbb65d/src/views/Legal/TermsOfUse.vue
+https://github.com/CVEProject/cve-website/blob/3a07b8de5d1ff8c024a7926ccd42100a88fbb65d/src/components/FooterModule.vue
+
+The source footer computes the ending copyright year from the current year.
+The license text is reproduced without substantive change; HTML markup and layout whitespace are removed.
+This notice accompanies the CVE-derived material in the publication-state reconstruction artifact and must remain with copies of that material.

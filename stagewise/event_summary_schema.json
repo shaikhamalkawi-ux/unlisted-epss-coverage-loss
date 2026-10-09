@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UNLISTED event-summary stagewise coverage input",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "outcome_id",
+      "future_outcome_type",
+      "future_outcome_date",
+      "source_provider",
+      "decision_schedule",
+      "outcome_horizon_days",
+      "source_observable",
+      "best_conservative_rank_within_horizon"
+    ],
+    "properties": {
+      "outcome_id": {"type":"string","minLength":1},
+      "future_outcome_type": {"type":"string","minLength":1},
+      "future_outcome_date": {"type":"string","format":"date"},
+      "source_provider": {"type":"string","minLength":1},
+      "decision_schedule": {"type":"string","minLength":1},
+      "outcome_horizon_days": {"type":"integer","minimum":1},
+      "source_observable": {"type":"boolean"},
+      "best_conservative_rank_within_horizon": {"type":["number","null"],"minimum":1},
+      "best_score_within_horizon": {"type":["number","null"]},
+      "best_decision_date_within_horizon": {"type":["string","null"],"format":"date"},
+      "top1pct_captured": {"type":["boolean","null"]}
+    }
+  }
+}

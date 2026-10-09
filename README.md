@@ -28,7 +28,7 @@ From the repository root:
 
 ```bash
 cd stagewise
-python run_stagewise_coverage.py reported_public_event_input.csv --output-dir reproduced_output
+python run_stagewise_coverage.py reported_public_event_input.csv.gz --output-dir reproduced_output
 python test_reported_results.py
 ```
 

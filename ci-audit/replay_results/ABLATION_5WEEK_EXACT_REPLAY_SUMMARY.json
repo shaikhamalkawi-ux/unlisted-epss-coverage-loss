@@ -1,0 +1,8 @@
+{
+  "archive_5week_ablation_rows": 18,
+  "matched_1e-12": 18,
+  "max_abs_endpoint_error": 9.020562075079397e-17,
+  "resampling": "5-week circular moving-block bootstrap",
+  "seed": 260711,
+  "replicates": 5000
+}

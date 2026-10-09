@@ -1,0 +1,25 @@
+{
+  "id": "UNLISTED_Q2b_Fuzzy_E02_20261008",
+  "status": "FROZEN_BEFORE_E02_HELD_OUT_PERFORMANCE_INSPECTION",
+  "reason": "E01 baseline replay gate identified the pre-existing, independently documented F03/2025-01-28 full-logistic lineage inconsistency. Across all 102 held-out dates, candidate counts, event counts and EPSS AP replay exactly within 1e-12; full-logistic AP replays within 1e-12 on 101/102 dates. The sole exception is F03/2025-01-28: legacy locked AP 0.0005504560627005 versus coefficient-and-raw replay AP 0.0005503592967540049. The latter independently agrees with the previously preserved A5 full-trajectory row 0.000550359296754. E02 does not widen tolerance, overwrite the legacy row, or claim the original generating lineage is recovered.",
+  "study_type": "Retrospective exploratory secondary Q2 extension; not confirmatory, not prospective, and not an equivalence/noninferiority study.",
+  "primary_contrast": "fuzzy_primary - reduced_logistic_primary, separately by regime, on the exact same 102 decision dates and candidate panels.",
+  "baseline_gates": {
+    "raw_files": "106/106 exact bytes and SHA-256 must pass",
+    "candidate_counts": "102/102 exact legacy counts required",
+    "event_counts": "102/102 exact legacy counts required",
+    "epss_ap": "102/102 absolute tolerance 1e-12 required",
+    "full_logistic_replay": "101/102 absolute tolerance 1e-12 required; exactly one predeclared lineage exception allowed only at F03/2025-01-28 with legacy and replay values fixed above. Any second exception is HOLD."
+  },
+  "full_logistic_handling": {
+    "replayable": "Score exact candidate panels using the archived locked coefficient/standardization table. Use for AUC, Top-K and score-derived comparisons.",
+    "legacy": "Preserve original locked date-level AP sequence unchanged. Use only as a lineage sensitivity for AP-level fuzzy-minus-full comparison. Do not infer per-CVE legacy scores or Top-K from it.",
+    "reporting": "Show the one-row discrepancy explicitly. Do not silently replace the legacy table and do not claim the replay identifies the original execution lineage."
+  },
+  "fuzzy_and_reduced_models": "Use the exact deterministic E01 training-check model JSONs, whose SHA-256 values matched the repeated current E01 training run byte-for-byte for F01-F08.",
+  "fuzzy_design": "Unchanged from E01: 12-rule zero-order Sugeno comparator; level/trend memberships estimated on training data only; missing history is not stable; fixed rules and no test tuning.",
+  "version_aware_sensitivity": "Unchanged from E01 and applied symmetrically to fuzzy and reduced logistic.",
+  "uncertainty": "Same circular moving-block bootstrap, 5000 replicates, block 5 primary and 4/8/13 sensitivity, new E02 registry. All results exploratory.",
+  "reporting_rule": "All positive, null and negative outcomes retained. No manuscript edit until 102/102 E02 computation and independent internal QA complete.",
+  "manuscript": "UNLISTED40 remains unchanged during E02 execution."
+}

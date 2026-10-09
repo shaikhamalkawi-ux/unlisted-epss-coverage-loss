@@ -1,0 +1,9 @@
+{
+  "new_index_arrays": 26,
+  "abl_5week_rows_checked": 18,
+  "other_block_rows_checked": 8,
+  "max_abs_endpoint_error": 9.367506770274758e-17,
+  "failures": [],
+  "passed": true,
+  "historical_registry_recovered": false
+}

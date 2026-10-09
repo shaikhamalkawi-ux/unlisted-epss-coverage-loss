@@ -1,0 +1,235 @@
+{
+  "fold": {
+    "fold_id": "F02",
+    "fold_family": "v3_internal",
+    "train_start": "2023-04-04",
+    "train_end": "2024-08-27",
+    "test_start": "2024-10-01",
+    "test_end": "2024-12-24",
+    "train_dates": 74,
+    "test_dates": 13,
+    "negative_sample_rate": 0.005,
+    "primary_negative_sample_rate": 0.005,
+    "train_rows": 83189,
+    "train_events": 557,
+    "train_non_events": 82632,
+    "inverse_probability_non_event_weight": 200.0,
+    "status": "PASS",
+    "fit_warning_count": 1,
+    "fit_warnings": "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0.",
+    "test_candidate_rows": 3439782,
+    "test_future_kev_events": 135
+  },
+  "protocol_sha256": "ab2580ed65d16feb7c33997f53645eb74d2181c03bea2e9e5b57936a49afdf93",
+  "not_held_out_performance": true,
+  "fuzzy_primary": {
+    "membership": {
+      "level_knots": [
+        -7.728295734223563,
+        -6.548649811284539,
+        -3.5796103391891063
+      ],
+      "trend_scale": 7.841571386517753,
+      "trend_scale_rule": "max_positive_absolute_training_trend_fallback"
+    },
+    "consequents": [
+      0.0009420040933571608,
+      2.7591341563040673e-05,
+      0.002798961871784988,
+      0.0011260379867620352,
+      4.871275539853387e-06,
+      0.0018213675459170693,
+      0.0010597546255633223,
+      7.05537535773165e-05,
+      0.004865739850651282,
+      0.000736444098518955,
+      0.0006383784715932005,
+      0.00111638845150044
+    ],
+    "rules": [
+      "low__falling__history_valid",
+      "low__stable__history_valid",
+      "low__rising__history_valid",
+      "middle__falling__history_valid",
+      "middle__stable__history_valid",
+      "middle__rising__history_valid",
+      "high__falling__history_valid",
+      "high__stable__history_valid",
+      "high__rising__history_valid",
+      "low__history_unavailable",
+      "middle__history_unavailable",
+      "high__history_unavailable"
+    ],
+    "audit": {
+      "solver_success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 471,
+      "projected_gradient_max": 2.905022559759928e-06,
+      "training_weighted_log_loss": 0.00036358595235383293,
+      "training_prevalence": 3.370251401997355e-05,
+      "training_rows": 83189,
+      "training_events": 557,
+      "effective_rule_weight": [
+        720.85462213135,
+        5406579.87414851,
+        1296.1206400071783,
+        1837.0242179947795,
+        6970905.72962538,
+        4253.262852539637,
+        2762.4110410146272,
+        4069285.5627859505,
+        4669.160066492419,
+        47068.52779207656,
+        15243.933616261651,
+        2334.538591661785
+      ],
+      "effective_positive_rule_weight": [
+        0.04875003761283932,
+        124.52226331277559,
+        0.13110426724480467,
+        0.18229427066817702,
+        124.10189505642899,
+        1.3153192220427647,
+        0.31080754236994756,
+        252.32561246781952,
+        7.061953823037351,
+        34.04728067982148,
+        10.624283395821381,
+        2.3284359243571227
+      ],
+      "interpretation": "Training/conformance only; not held-out empirical performance."
+    }
+  },
+  "reduced_primary": {
+    "mean": [
+      -5.965000438949778,
+      0.003055785706550694,
+      0.0044477034223274715
+    ],
+    "scale": [
+      2.0313133192620563,
+      0.09725749616777449,
+      0.06654262811610077
+    ],
+    "coef": [
+      0.23745907197236865,
+      0.07323833929644936,
+      0.1649163910644532
+    ],
+    "intercept": -9.626961456155493,
+    "iterations": 13,
+    "warnings": [
+      "'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', and C=np.inf instead of penalty=None."
+    ]
+  },
+  "history_primary": {
+    "missing_rows": 370,
+    "cross_version_rows": 0,
+    "unavailable_rows": 370
+  },
+  "fuzzy_version_aware": {
+    "membership": {
+      "level_knots": [
+        -7.728295734223563,
+        -6.548649811284539,
+        -3.5796103391891063
+      ],
+      "trend_scale": 7.841571386517753,
+      "trend_scale_rule": "max_positive_absolute_training_trend_fallback"
+    },
+    "consequents": [
+      0.0009420040933571608,
+      2.7591341563040673e-05,
+      0.002798961871784988,
+      0.0011260379867620352,
+      4.871275539853387e-06,
+      0.0018213675459170693,
+      0.0010597546255633223,
+      7.05537535773165e-05,
+      0.004865739850651282,
+      0.000736444098518955,
+      0.0006383784715932005,
+      0.00111638845150044
+    ],
+    "rules": [
+      "low__falling__history_valid",
+      "low__stable__history_valid",
+      "low__rising__history_valid",
+      "middle__falling__history_valid",
+      "middle__stable__history_valid",
+      "middle__rising__history_valid",
+      "high__falling__history_valid",
+      "high__stable__history_valid",
+      "high__rising__history_valid",
+      "low__history_unavailable",
+      "middle__history_unavailable",
+      "high__history_unavailable"
+    ],
+    "audit": {
+      "solver_success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 471,
+      "projected_gradient_max": 2.905022559759928e-06,
+      "training_weighted_log_loss": 0.00036358595235383293,
+      "training_prevalence": 3.370251401997355e-05,
+      "training_rows": 83189,
+      "training_events": 557,
+      "effective_rule_weight": [
+        720.85462213135,
+        5406579.87414851,
+        1296.1206400071783,
+        1837.0242179947795,
+        6970905.72962538,
+        4253.262852539637,
+        2762.4110410146272,
+        4069285.5627859505,
+        4669.160066492419,
+        47068.52779207656,
+        15243.933616261651,
+        2334.538591661785
+      ],
+      "effective_positive_rule_weight": [
+        0.04875003761283932,
+        124.52226331277559,
+        0.13110426724480467,
+        0.18229427066817702,
+        124.10189505642899,
+        1.3153192220427647,
+        0.31080754236994756,
+        252.32561246781952,
+        7.061953823037351,
+        34.04728067982148,
+        10.624283395821381,
+        2.3284359243571227
+      ],
+      "interpretation": "Training/conformance only; not held-out empirical performance."
+    }
+  },
+  "reduced_version_aware": {
+    "mean": [
+      -5.965000438949778,
+      0.003055785706550694,
+      0.0044477034223274715
+    ],
+    "scale": [
+      2.0313133192620563,
+      0.09725749616777449,
+      0.06654262811610077
+    ],
+    "coef": [
+      0.23745907197236865,
+      0.07323833929644936,
+      0.1649163910644532
+    ],
+    "intercept": -9.626961456155493,
+    "iterations": 13,
+    "warnings": [
+      "'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', and C=np.inf instead of penalty=None."
+    ]
+  },
+  "history_version_aware": {
+    "missing_rows": 370,
+    "cross_version_rows": 0,
+    "unavailable_rows": 370
+  }
+}

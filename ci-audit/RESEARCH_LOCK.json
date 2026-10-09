@@ -1,0 +1,13 @@
+{
+  "manuscript_scientific_baseline": "UNLISTED42_COSE_AcademicPrecision_20261008",
+  "manuscript_modified": false,
+  "legacy_outputs_unchanged": true,
+  "arithmetic_replays": {
+    "archived_date_resampling": 576,
+    "unlisted9_ablation_5week": 18
+  },
+  "moving_block_original_registry_recovered": false,
+  "historical_18_of_30_lineage_status": "HOLD",
+  "new_audit_indices_sha256": "18fb321d80b99fa5173f02e11b6ad6020b0594eef14b6b41c44c03a7ecbf1c40",
+  "missing_historical_registry_sha256": "3518700e8779bdcf4ce8745ffc0c3aa87f58515cfbb991729ffb5a5bd604226b"
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "Archived date-resampling outputs only (not historical 5-week moving-block interval registry)",
+  "records": 576,
+  "matched_at_1e-12": 576,
+  "maximum_interval_endpoint_error": 2.2737367544323206e-13,
+  "maximum_mean_error": 5.684341886080802e-14,
+  "records_by_table": {
+    "current_environment_reproduction|paired_date_block_bootstrap.csv": 126,
+    "current_environment_reproduction|sampling_rate_sensitivity_date_block_bootstrap.csv": 162,
+    "locked_results/trajectory_model|paired_date_block_bootstrap.csv": 126,
+    "locked_results/trajectory_model|sampling_rate_sensitivity_date_block_bootstrap.csv": 162
+  }
+}

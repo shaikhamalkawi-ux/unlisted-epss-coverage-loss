@@ -1,0 +1,76 @@
+{
+  "dates_102": true,
+  "six_models_each_date": true,
+  "family_counts": {
+    "v4_adaptive": 52,
+    "v3_internal": 37,
+    "v4_transport": 13
+  },
+  "support_102": true,
+  "one_lineage_exception": true,
+  "epss_replay_max_abs_diff": 1.0018028073766061e-16,
+  "full_nonexception_max_abs_diff": 9.71445146547012e-17,
+  "lineage_diff": -9.676594649513353e-08,
+  "family_mean_maxdiff": 9.280770596475918e-17,
+  "bootstrap_arrays": {
+    "v3_internal__b4": [
+      5000,
+      37
+    ],
+    "v3_internal__b5": [
+      5000,
+      37
+    ],
+    "v3_internal__b8": [
+      5000,
+      37
+    ],
+    "v3_internal__b13": [
+      5000,
+      37
+    ],
+    "v4_adaptive__b4": [
+      5000,
+      52
+    ],
+    "v4_adaptive__b5": [
+      5000,
+      52
+    ],
+    "v4_adaptive__b8": [
+      5000,
+      52
+    ],
+    "v4_adaptive__b13": [
+      5000,
+      52
+    ],
+    "v4_transport__b4": [
+      5000,
+      13
+    ],
+    "v4_transport__b5": [
+      5000,
+      13
+    ],
+    "v4_transport__b8": [
+      5000,
+      13
+    ]
+  },
+  "block5_rows": 18,
+  "capture_denoms": [
+    [
+      508,
+      325
+    ]
+  ],
+  "no_nan_primary_block5": true,
+  "v3_legacy_minus_replayable_mean": 2.6152958487261602e-09,
+  "sha256_family_summary.csv": "5459e6692379a74f9b1c647df4cc9ced6dea8938a2c064ae10e659a0806692f4",
+  "sha256_paired_exploratory_intervals.csv": "f8360ad694eed319229045b79e465b3eeb521acefd0c67f2379f43c51d099f10",
+  "sha256_common_support_event_capture.csv": "c45c9d0c349e84047dda8b9e8af5b9e158bd11062738cacab4dbd3a94d105302",
+  "sha256_date_level_metrics.csv": "e5afe986265c7653bd80466ac47e8580e420554731c4dd78e3edebf461898963",
+  "sha256_PANEL_REPLAY_GATE.csv": "fad0d5f5a93ab9dad2d3d1e735298d07c6a68842f1fe3b8d59a7071f190fe8b0",
+  "sha256_NEW_E02_BOOTSTRAP_INDICES.npz": "5accf8acc731b23fd58c636c0511276cc2f80858098e607b826181a6b2dc3c2e"
+}

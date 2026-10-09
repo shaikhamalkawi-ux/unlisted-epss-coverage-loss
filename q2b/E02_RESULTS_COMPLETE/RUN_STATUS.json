@@ -1,0 +1,12 @@
+{
+  "status": "E02_EXPLORATORY_EVALUATION_COMPLETE_NOT_MANUSCRIPT_APPROVAL",
+  "e02_protocol_sha256": "797f165dcb1000449f53a60b1e7cd134aa48ab86a1269a9139da2bc078548adb",
+  "raw_pass": 106,
+  "evaluated_dates": 102,
+  "baseline_candidate_event_epss_pass": 102,
+  "full_logistic_replay_matches_legacy": 101,
+  "predeclared_lineage_exceptions": 1,
+  "held_out_performance_computed": true,
+  "manuscript_modified": false,
+  "finished_utc": "2026-10-07T21:07:03.992179+00:00"
+}

@@ -1,0 +1,118 @@
+{
+  "id": "UNLISTED_Q2b_Fuzzy_E01_20261007",
+  "status": "FROZEN_BEFORE_NEW_FUZZY_FITS_OR_HELD_OUT_EVALUATION",
+  "frozen_utc": "2026-10-07T16:47:22.392570+00:00",
+  "rq": "Does the incremental ranking value of a compact fuzzy history-aware comparator change across EPSS model regimes, relative to statistical comparators evaluated on the same decision dates and candidate panels?",
+  "study_type": "Retrospective exploratory secondary Q2 extension; existing historical outcomes were already seen. Not a preregistered prospective or independent test.",
+  "manuscript": "UNLISTED40 remains unchanged; no UNLISTED41 manuscript is created by E01.",
+  "page_budget": {
+    "main_additional_target": [
+      2,
+      3
+    ],
+    "supplement_additional_target": [
+      3,
+      5
+    ],
+    "not_a_rendered_page_count": true
+  },
+  "model_name": "Fuzzy History-Aware Triage Comparator",
+  "rule_count": 12,
+  "inputs": [
+    "logit_epss_current",
+    "delta_logit_1w",
+    "history_unavailable_flag"
+  ],
+  "memberships": {
+    "level": "Three piecewise-linear shoulder/hat memberships with inverse-probability-weighted training empirical quantile knots at 0.10,0.50,0.90. Inverse-CDF quantiles: first cumulative weight >= quantile. All three knots must be distinct; otherwise HOLD. No test quantiles.",
+    "trend": "Three piecewise-linear shoulder/hat memberships at [-a,0,a], a = weighted training 90th quantile of absolute known trend. If zero, use maximum positive absolute known training trend. If no nonzero known trend, HOLD.",
+    "and": "product",
+    "normalization": "Sum firing strengths, then normalize; finite nonnegative weights and positive denominator required.",
+    "missing": "9 rules only for valid history; 3 level-only rules otherwise. Missing is not stable."
+  },
+  "consequents": {
+    "bounds": [
+      1e-08,
+      0.99999999
+    ],
+    "objective": "Inverse-probability-weighted Bernoulli negative log loss; fixed memberships; no class rebalancing or test tuning. Convex box-constrained fitting of constant consequents.",
+    "solver": "L-BFGS-B in linearly prevalence-scaled coordinates; analytic gradient; objective divided by training prevalence.",
+    "maxiter": 5000,
+    "maxls": 50,
+    "ftol": 1e-12,
+    "gtol": 1e-08,
+    "projected_gradient_acceptance": 1e-05,
+    "initialization": "all consequents equal weighted training prevalence; no random restarts",
+    "zero_support_rule": "consequent stays at initialization; mark unestimated; no expert or interpretability claim"
+  },
+  "training": {
+    "sample_rate": 0.005,
+    "sample_seed": 260711,
+    "use": "Archive-hashed derived samples; all outcome=1 rows plus sampling_uniform<0.005 rows; w=1 for positives and 200 for sampled non-events. Only within each exact fold training interval.",
+    "folds": "inputs/folds.csv, 8 locked F01-F08; F04 separately trained before transition, then fixed throughout its test block.",
+    "full_logistic": "Use saved locked coefficients and training standardization; require full-panel date-level AP replay agreement before admitting a four-way performance comparison.",
+    "reduced_logistic": "Same x, delta and unavailable bit as fuzzy; original unweighted training scaler; unpenalized L-BFGS logistic max_iter=1000,tol=1e-4. Convergence warnings cause HOLD."
+  },
+  "version_handling": {
+    "primary": "Keep one-week trend across upstream version boundary, as in original benchmark; only missing lag sets unavailable.",
+    "sensitivity": "If source header versions for current and lag1 differ, mark history not directly comparable; set unavailable bit=1 and numeric delta=0; apply identically to fuzzy and reduced logistic. Preserve missing and cross-version reasons separately in diagnostics, not extra unequal model inputs.",
+    "no_v5": "Testing ends 2026-06-09; no v5 claim."
+  },
+  "evaluation": {
+    "test_dates": 102,
+    "families": {
+      "v3_internal": 37,
+      "v4_transport": 13,
+      "v4_adaptive": 52
+    },
+    "required_full_raw_files": 106,
+    "raw_bytes": 196250066,
+    "horizon_days": 30,
+    "prior_kev": "Exclude dateAdded<=decision",
+    "observation_end": "2026-07-10",
+    "metrics": [
+      "AP primary, full exact tie groups",
+      "ROC AUC secondary, average ties",
+      "Top-100,500,1000 sure/possible exact tie bounds",
+      "Common-support unique-event 30-day captures with explicit outcome and observability denominators"
+    ],
+    "primary_contrast": "fuzzy_primary - reduced_logistic_primary, separately by regime",
+    "other_contrasts": "fuzzy vs original EPSS and saved full logistic; paired version-aware effects on fuzzy and reduced logistic; no selective deletion.",
+    "full_logistic_gate_absolute_tolerance": 1e-12,
+    "original_baseline_ep ss_gate_absolute_tolerance": 1e-12,
+    "event_and_candidate_counts": "Must equal locked original records exactly on every paired date. No partial date removal, surrogate candidate population, sample-only test, or cutoff relaxation."
+  },
+  "uncertainty": {
+    "method": "Circular moving-block bootstrap on full chronological paired date sequence; equal-date means; zero-event dates carried as NaN, not zero.",
+    "block_primary": 5,
+    "block_sensitivity": [
+      4,
+      8,
+      13
+    ],
+    "replicates": 5000,
+    "seed": 20261007,
+    "new_registry": "Save actual sampled indices and hash; never relabel this as the missing historical registry.",
+    "short_block": "Block length>=number of dates is uninformative and not reported as a CI.",
+    "interpretation": "Descriptive exploratory intervals, not equivalence/noninferiority, probability calibration, or multiplicity-controlled confirmatory evidence."
+  },
+  "locked_counts": {
+    "cohort": 749,
+    "observable": 475,
+    "unobservable": 274,
+    "original_epss_top1000_30d": 41,
+    "official_state_partition": [
+      251,
+      0,
+      23
+    ]
+  },
+  "holds_preserved": [
+    "18/30 inherited interval execution lineages unresolved",
+    "original bootstrap registry absent from recovered archive",
+    "F03/A5 lineage discrepancy unresolved; do not merge saved analysis lineages",
+    "S17 correction and F04 wording correction remain to be incorporated separately",
+    "Censys/COCOON and operational risk claims not admitted"
+  ],
+  "reporting": "All outcomes retained, positive or negative. Similar performance does not establish equivalence. Compact rule structure does not demonstrate analyst interpretability. No guaranteed novelty/publication/acceptance. No fabricated result table or manuscript edit before evaluation gate passes."
+}

@@ -16,9 +16,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Verify unauthenticated download access for three public bounded reviewer archives
+        env:
+          GITHUB_TOKEN: ''
+          GH_TOKEN: ''
+        run: |
+          python - <<'PY'
+          import hashlib, urllib.request
+          prefix='https://raw.githubusercontent.com/shaikhamalkawi-ux/unlisted-epss-coverage-loss/042d382c664b6f21b000d33002798cf8e4dafb62/reviewer-evidence/v5r1/'
+          expected={
+            'UNLISTED56R3R1_Reviewer_Bounded_Audit_Kit.zip':'780e4ab07a1e59c4a73d53e4b8d770be2378c8432fa0431464eb6c5b7f0a204c',
+            'UNLISTED_V5R1_CorrectedHoldout_PUBLIC_SAFE_GITHUB_20261027.zip':'fe2b6db7744b0a14f228d211b3b377145aa5a6bdcaece27eebe24048dc069ed8',
+            'UNLISTED_V5R1_HistoricalHoldout_DerivedResults_20261027.zip':'ab528d983de12b63f52894572ef8edd52342f0754600490602af6045e458e560',
+          }
+          for name,sha in expected.items():
+            req=urllib.request.Request(prefix+name,headers={'User-Agent':'UNLISTED-reviewer-anon-access-check'})
+            with urllib.request.urlopen(req,timeout=60) as response:
+              payload=response.read()
+            assert hashlib.sha256(payload).hexdigest()==sha, 'MISSING_OR_ALTERED_PUBLIC_FILE: '+name
+            print('ANONYMOUS_READ_PASS',name,len(payload))
+          PY
       - name: Verify independent script syntax
         run: python -m py_compile reviewer-evidence/v5r1/independent_raw_crosscheck.py
-      - name: Re-download and verify all 15 EPSS and 16 CISA historical source blobs; compare independent replay with sealed derived tables
+      - name: Re-download and verify 15 EPSS plus 16 CISA KEV historical source blobs; compare independent policy replay to sealed derived tables
         run: python reviewer-evidence/v5r1/independent_raw_crosscheck.py
       - name: Retain only independent JSON certificate, not original third-party files
         if: success()

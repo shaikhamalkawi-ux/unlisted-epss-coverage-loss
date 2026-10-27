@@ -1,0 +1,65 @@
+name: UNLISTED V5R1 pinned historical holdout
+
+on:
+  push:
+    branches: [v5r1-pinned-holdout-ci-20261027]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify and extract the immutable public-safe V5R1 ZIP
+        run: |
+          printf '%s  %s\n' 'fe2b6db7744b0a14f228d211b3b377145aa5a6bdcaece27eebe24048dc069ed8' 'reviewer-evidence/v5r1/UNLISTED_V5R1_CorrectedHoldout_PUBLIC_SAFE_GITHUB_20261027.zip' | sha256sum -c
+          mkdir -p reviewer-evidence/v5r1/replay
+          unzip -q reviewer-evidence/v5r1/UNLISTED_V5R1_CorrectedHoldout_PUBLIC_SAFE_GITHUB_20261027.zip -d reviewer-evidence/v5r1/replay
+      - name: Install fixed parser requirements
+        run: python -m pip install 'pandas==2.2.3' 'requests==2.32.3'
+      - name: Pinned metadata and synthetic replay only (not a scientific result)
+        working-directory: reviewer-evidence/v5r1/replay
+        run: |
+          python code/check_v5_metadata_preflight.py
+          python tests/test_v5_gate_synthetic.py
+
+  external-raw-source-replay:
+    needs: [synthetic]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify and extract the immutable public-safe V5R1 ZIP
+        run: |
+          printf '%s  %s\n' 'fe2b6db7744b0a14f228d211b3b377145aa5a6bdcaece27eebe24048dc069ed8' 'reviewer-evidence/v5r1/UNLISTED_V5R1_CorrectedHoldout_PUBLIC_SAFE_GITHUB_20261027.zip' | sha256sum -c
+          mkdir -p reviewer-evidence/v5r1/replay
+          unzip -q reviewer-evidence/v5r1/UNLISTED_V5R1_CorrectedHoldout_PUBLIC_SAFE_GITHUB_20261027.zip -d reviewer-evidence/v5r1/replay
+      - name: Install fixed parser requirements
+        run: python -m pip install 'pandas==2.2.3' 'requests==2.32.3'
+      - name: Acquire and hash-check 15 EPSS and 16 CISA KEV originals; run the real replay
+        working-directory: reviewer-evidence/v5r1/replay
+        run: |
+          python code/run_v5_pinned_holdout.py --manifest provenance/V5_SOURCE_LOCK.json --output results/real_v5
+      - name: Publish derived certificates only; never raw EPSS/KEV files
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: UNLISTED-V5R1-Verified-Derived-Results
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            reviewer-evidence/v5r1/replay/results/real_v5/LOCKED_V5_SOURCE_CHECKS.csv
+            reviewer-evidence/v5r1/replay/results/real_v5/V5_HOLDOUT_POLICY_RESULTS.csv
+            reviewer-evidence/v5r1/replay/results/real_v5/V5_WEEKLY_WORK.csv
+            reviewer-evidence/v5r1/replay/results/real_v5/EXECUTION_CERTIFICATE.json
